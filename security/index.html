@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security policy: Obsidian Ridge Labs apps for Atlassian</title>
+<meta name="description" content="How to report a security issue in an Obsidian Ridge Labs app for Jira, and how we build and fix our apps.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <a class="name" href="../">Obsidian Ridge Labs</a>
+  <nav><a href="../">Apps and support</a><a href="../privacy/">Privacy</a><a href="../security/" aria-current="page">Security</a></nav>
+</header>
+<main>
+<h1>Security policy</h1>
+<p class="meta">Effective 2026-11-09. Applies to Obsidian Ridge Labs apps on the Atlassian Marketplace.</p>
+
+<h2>Report a security issue</h2>
+<p>Email <a href="mailto:support@obsidianridgelabs.com?subject=Security">support@obsidianridgelabs.com</a> with "Security" in the subject. Tell us the app, the version or date you tested, the steps to reproduce, and the impact you expect. Please do not test against Jira sites you do not own, and give us a reasonable time to fix the issue before you publish it.</p>
+<p>We confirm receipt within two business days, keep you updated while we work on it, and credit you in the release notes if you would like.</p>
+
+<h2>How we fix issues</h2>
+<p>We fix security issues within the time frames of Atlassian's <a href="https://developer.atlassian.com/platform/marketplace/security-bugfix-policy/">Marketplace Security Bug Fix Policy</a>, based on severity. Fixes are released through the Forge platform, so installed sites get them without any action from customers unless a fix needs new permissions.</p>
+
+<h2>How our apps are built</h2>
+<ul>
+  <li>Our apps run on Atlassian Forge, Atlassian's hosted app platform. Customer data stays on Atlassian's infrastructure unless an app's listing says otherwise.</li>
+  <li>Each app asks for the narrowest Jira permissions it needs. Read-only Gantt Chart for Jira has one, <code>read:jira-work</code>, and cannot change any data.</li>
+  <li>Read-only Gantt Chart for Jira has no server of its own, stores no customer data outside the viewer's browser, and declares no external network access.</li>
+  <li>Apps read Jira as the signed-in user, so people only see what Jira already lets them see.</li>
+  <li>Text from Jira is escaped before it is drawn, and CSV exports defuse cells that a spreadsheet could read as formulas.</li>
+  <li>We do not ask for or store passwords, API tokens or personal access tokens.</li>
+  <li>Before each release we check our dependencies for known vulnerabilities.</li>
+</ul>
+</main>
+<footer>
+  <p>Obsidian Ridge Labs, Las Vegas, Nevada, USA. Support: <a href="mailto:support@obsidianridgelabs.com">support@obsidianridgelabs.com</a>.
+  Atlassian, Jira and Confluence are trademarks of Atlassian. Our apps are not made or endorsed by Atlassian.</p>
+</footer>
+</body>
+</html>

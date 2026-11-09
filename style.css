@@ -1,0 +1,34 @@
+:root { --ink: #172B4D; --subtle: #44546F; --line: #DCDFE4; --paper: #FFFFFF; --wash: #F7F8F9; --link: #0C66E4; --today: #E56910; }
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #DEE4EA; --subtle: #9FADBC; --line: #38414A; --paper: #1D2125; --wash: #22272B; --link: #579DFF; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+header, main, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+header .name { font-weight: 700; color: var(--ink); text-decoration: none; }
+header .name::before { content: ""; display: inline-block; width: 4px; height: 16px; margin-right: 10px; vertical-align: -2px; border-radius: 2px; background: var(--today); }
+nav { display: flex; gap: 18px; font-size: 15px; }
+nav a { color: var(--subtle); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--ink); }
+main { padding-top: 36px; padding-bottom: 48px; }
+h1 { font-size: 32px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+h2 { font-size: 21px; margin: 40px 0 8px; }
+h3 { font-size: 17px; margin: 24px 0 4px; }
+p, ul, ol { margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+a { color: var(--link); }
+.lede { font-size: 18px; color: var(--subtle); margin-bottom: 28px; }
+.meta { font-size: 14px; color: var(--subtle); }
+.app { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-top: 1px solid var(--line); }
+.app img { width: 56px; height: 56px; flex: none; }
+.app h2 { margin: 0 0 4px; font-size: 19px; }
+.shot { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; margin: 8px 0 20px; }
+.key { display: inline-block; width: 22px; height: 10px; border-radius: 3px; vertical-align: 0; margin-right: 6px; }
+table { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; }
+code { font: 14px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--wash); padding: 1px 5px; border-radius: 4px; }
+footer { padding-top: 20px; padding-bottom: 40px; border-top: 1px solid var(--line); font-size: 14px; color: var(--subtle); }
+footer a { color: var(--subtle); }

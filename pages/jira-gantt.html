@@ -1,0 +1,63 @@
+<!-- path: jira-gantt/ -->
+<!-- title: Read-only Gantt Chart for Jira: documentation -->
+<!-- desc: How to use Read-only Gantt Chart for Jira: choose a JQL query or saved filter, pick date fields, read dependencies, and export PNG or CSV. -->
+<h1>Read-only Gantt Chart for Jira</h1>
+<p class="lede">Draws a Gantt chart from any JQL query or saved filter. The app only reads Jira, so it never changes an issue.</p>
+<img class="shot" src="chart.png" alt="The Gantt chart inside a Jira project: epics with their stories and subtasks as bars on a weekly timeline, an orange line for today, and arrows between blocked issues." width="1840" height="900">
+
+<h2>Open the chart</h2>
+<ol>
+  <li>A Jira admin installs the app from the Atlassian Marketplace.</li>
+  <li>Open any project. In the project sidebar, choose <strong>Gantt chart (read-only)</strong>. In some projects it sits under <strong>Apps</strong>.</li>
+</ol>
+<p>The chart works in company-managed and team-managed projects, in software, service and business projects.</p>
+
+<h2>Choose the issues</h2>
+<ul>
+  <li><strong>JQL:</strong> the chart starts with every issue in the current project, <code>project = "KEY" ORDER BY created ASC</code>. Type any JQL and press <strong>Show</strong>. The order of your query is the order of the rows.</li>
+  <li><strong>Saved filters:</strong> the menu lists the filters you have starred in Jira. Choosing one runs its JQL.</li>
+  <li>The chart shows up to 1,000 issues. If your query matches more, the status line says so; narrow the JQL to see the rest.</li>
+</ul>
+<p>You only ever see issues you already have permission to see in Jira, because the app reads Jira as you.</p>
+
+<h2>Bars and dates</h2>
+<ul>
+  <li><strong>Start</strong> and <strong>End</strong> pick the date fields for each bar. The defaults are <em>Start date</em> and <em>Due date</em> when your site has them. Any date field, including custom fields, can be used.</li>
+  <li>An issue with no start date is drawn from its created date, with a dashed, lighter bar.</li>
+  <li>An issue with no end date is drawn as a one day marker, lighter than the rest.</li>
+  <li>An epic or parent with no dates of its own gets a thin rolled-up bar over the span of its children.</li>
+  <li>Colours follow the status category (to do, in progress, done), as shown in the legend above the chart. They follow your Jira theme, light or dark.</li>
+  <li>The orange line is today. The chart opens on today; if all the work is in the past or the future, it opens on the nearest work.</li>
+</ul>
+<p>Hover over a bar to see its key, summary, type, status, assignee and dates. Click a bar or a name to open the issue in a new tab.</p>
+
+<h2>Rows and nesting</h2>
+<p>Epics, their child issues and subtasks are nested under their parent. A child whose parent is not in your query stays at the top level. Use <strong>Weeks</strong> and <strong>Months</strong> to change the zoom. The dates stay at the top and the issue names stay on the left while you scroll.</p>
+
+<h2>Dependencies</h2>
+<p>Jira <em>Blocks</em> links between issues on the chart are drawn as arrows from the blocking issue to the blocked one. An arrow turns red when the blocked issue starts before the issue blocking it ends, which means the plan cannot work as dated. Other link types are not drawn.</p>
+
+<h2>Export</h2>
+<ul>
+  <li><strong>Export PNG</strong> saves the whole chart as an image, for a slide or a status email. If your browser blocks the conversion, the chart is saved as an SVG image instead.</li>
+  <li><strong>Export CSV</strong> saves one row per issue: key, summary, type, status, assignee, parent, start, where the start came from, end, and the issues it blocks. It opens in Excel, Numbers and Google Sheets.</li>
+</ul>
+<p>Exports are made in your browser and saved to your device. They are not sent anywhere.</p>
+
+<h2>What the app can and cannot do</h2>
+<p>The app has one Jira permission, <code>read:jira-work</code>. It uses it to search issues with your JQL, list date fields, and list your starred filters. It cannot create, edit, move, transition or comment on issues, so viewing a chart never changes an issue's dates, rank or updated time. It has no server of its own and makes no connection outside Jira. Your JQL, zoom and date field choices are remembered per project in your own browser. See the <a href="../privacy/">privacy policy</a> for details.</p>
+
+<h2>Troubleshooting</h2>
+<table>
+  <tr><th>You see</th><th>What to do</th></tr>
+  <tr><td>No issues match this JQL</td><td>Check the query in Jira's issue search. You only see issues you have permission to browse.</td></tr>
+  <tr><td>An error message from Jira under the toolbar</td><td>The message is Jira's own JQL error. Fix the field or value it names, then press Show.</td></tr>
+  <tr><td>Bars are all dashed</td><td>The chosen Start field is empty on those issues. Pick another date field under Start, or fill the dates in Jira.</td></tr>
+  <tr><td>"The license for this app is not active on this site"</td><td>A Jira admin can renew or start a trial under <strong>Apps &gt; Manage apps</strong>.</td></tr>
+  <tr><td>The menu item is missing from the project sidebar</td><td>Ask a Jira admin to check that the app is installed and enabled under <strong>Apps &gt; Manage apps</strong>.</td></tr>
+</table>
+<p>Still stuck? Email <a href="mailto:support@obsidianridgelabs.com">support@obsidianridgelabs.com</a> with your Jira site and a screenshot. We reply within two business days.</p>
+
+<h2>Pricing</h2>
+<p>Free for up to 10 users. Above that, $1 per user per month, billed by Atlassian with your Jira subscription.</p>
+<p class="meta">Last updated 2026-11-09.</p>
