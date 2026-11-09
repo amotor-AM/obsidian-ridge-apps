@@ -10,9 +10,9 @@ URLs once published (GitHub Pages, repo `obsidian-ridge-apps`, branch `main`, fo
 
 | Page | URL | Used for |
 | --- | --- | --- |
-| Apps and support | https://amotor-ai.github.io/obsidian-ridge-apps/ | Partner profile support URL (`#support`) |
-| Gantt documentation | https://amotor-ai.github.io/obsidian-ridge-apps/jira-gantt/ | Version "Documentation URL" |
-| Privacy policy | https://amotor-ai.github.io/obsidian-ridge-apps/privacy/ | Privacy and Security tab, partner profile |
-| Security policy | https://amotor-ai.github.io/obsidian-ridge-apps/security/ | Privacy and Security tab |
+| Apps and support | https://amotor-am.github.io/obsidian-ridge-apps/ | Partner profile support URL (`#support`) |
+| Gantt documentation | https://amotor-am.github.io/obsidian-ridge-apps/jira-gantt/ | Version "Documentation URL" |
+| Privacy policy | https://amotor-am.github.io/obsidian-ridge-apps/privacy/ | Privacy and Security tab, partner profile |
+| Security policy | https://amotor-am.github.io/obsidian-ridge-apps/security/ | Privacy and Security tab |
 
-To move these to a subdomain such as `apps.obsidianridgelabs.com` later: add a `CNAME` file with that name, add a CNAME DNS record pointing to `amotor-ai.github.io`, and update the URLs in each listing.
+To move these to a subdomain such as `apps.obsidianridgelabs.com` later: add a `CNAME` file with that name, add a CNAME DNS record pointing to `amotor-am.github.io`, and update the URLs in each listing.
