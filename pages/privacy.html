@@ -1,6 +1,6 @@
 <!-- path: privacy/ -->
 <!-- title: Privacy policy: Obsidian Ridge Labs apps for Atlassian -->
-<!-- desc: What Obsidian Ridge Labs apps for Jira read, what they keep, and what Atlassian shares with us. -->
+<!-- desc: What Obsidian Ridge Labs apps for Jira and Confluence read, what they keep, and what Atlassian shares with us. -->
 <h1>Privacy policy</h1>
 <p class="meta">Effective 2026-11-09. Applies to Obsidian Ridge Labs apps on the Atlassian Marketplace and to this website.</p>
 
@@ -18,6 +18,28 @@
 <h3>After uninstalling</h3>
 <p>We hold no data from your site, so there is nothing for us to delete. Settings in local storage stay in each browser until its site data is cleared.</p>
 
+<h2>Timesheet Report for Jira</h2>
+<h3>What it reads</h3>
+<p>When someone opens the timesheet, the app asks Jira, as that person, for the issues with worklogs in the chosen period that match their JQL. For each issue it reads the key, summary, issue type, project, parent and worklogs (author, start time, time spent and comment). It also reads Jira's time tracking settings: hours per day, the time format, and whether time tracking is on. Jira only returns what that person is already allowed to see, including worklog visibility limits.</p>
+<h3>Where it goes</h3>
+<p>Nowhere outside Jira. The app runs in the viewer's browser inside Jira, on Atlassian's Forge platform. It has no server of its own and declares no external network access, and Forge blocks connections to any other address. We never receive, see or store the content of your Jira site.</p>
+<h3>What it keeps</h3>
+<p>The period, columns, grouping, JQL, Only my worklogs and hours format are remembered per page in the browser's local storage on the viewer's own device. Worklogs are not stored. Clearing site data for your Jira site in the browser removes the settings.</p>
+<h3>Exports</h3>
+<p>CSV exports are made in the browser and saved to the viewer's device. We do not receive them.</p>
+<h3>After uninstalling</h3>
+<p>We hold no data from your site, so there is nothing for us to delete. Settings in local storage stay in each browser until its site data is cleared.</p>
+
+<h2>Markdown Macro for Confluence</h2>
+<h3>What it reads</h3>
+<p>Only the Markdown text saved in the macro on the page being viewed. Confluence passes it to the app when the page loads. The app asks for no Confluence permissions and cannot read other pages, spaces, users or attachments.</p>
+<h3>Where it goes</h3>
+<p>Nowhere outside Confluence. The Markdown is rendered in the viewer's browser on Atlassian's Forge platform. When a page is exported to PDF or Word, Confluence asks the app's export function, which runs on Forge, to convert the Markdown; it returns the result to Confluence and keeps nothing. The app declares no external network access, and Forge blocks connections to any other address. We never receive, see or store your page content.</p>
+<h3>What it keeps</h3>
+<p>Nothing. The Markdown is stored by Confluence as part of the page, with the page's own permissions and history. A .md file imported in the editor is read in the browser and not uploaded.</p>
+<h3>After uninstalling</h3>
+<p>We hold no data from your site, so there is nothing for us to delete. The Markdown stays in your pages as the macro's saved text.</p>
+
 <h2>Information Atlassian shares with us</h2>
 <p>When a customer installs or buys one of our apps, Atlassian gives us licensing and billing information as part of the Marketplace, for example the site address, the license type and size, and the names and email addresses of the license's technical and billing contacts. Atlassian also shows us totals such as how many sites have an app installed. We use this to provide support, manage licenses, and meet legal, tax and accounting duties. We keep it only as long as those purposes need or the law requires.</p>
 
@@ -32,7 +54,7 @@
 </ul>
 
 <h2>Atlassian's role</h2>
-<p>Atlassian hosts Jira and the Forge platform our apps run on. Atlassian's processing of your data is covered by the <a href="https://www.atlassian.com/legal/privacy-policy">Atlassian privacy policy</a> and your agreement with Atlassian.</p>
+<p>Atlassian hosts Jira, Confluence and the Forge platform our apps run on. Atlassian's processing of your data is covered by the <a href="https://www.atlassian.com/legal/privacy-policy">Atlassian privacy policy</a> and your agreement with Atlassian.</p>
 
 <h2>Your rights</h2>
 <p>Depending on where you live, including under the GDPR in Europe and the CCPA in California, you can ask what personal information we hold about you, ask us to correct or delete it, or object to how we use it. Email <a href="mailto:support@obsidianridgelabs.com">support@obsidianridgelabs.com</a> and we will answer within 30 days. You can also complain to your local data protection authority.</p>

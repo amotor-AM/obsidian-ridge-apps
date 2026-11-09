@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timesheet Report for Jira: documentation</title>
+<meta name="description" content="How to use Timesheet Report for Jira: pick a period, group by person, epic, project or issue, read the missing-hours flags, see the worklogs behind a number, and export CSV.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <a class="name" href="../">Obsidian Ridge Labs</a>
+  <nav><a href="../">Apps and support</a><a href="../privacy/">Privacy</a><a href="../security/">Security</a></nav>
+</header>
+<main>
+<h1>Timesheet Report for Jira</h1>
+<p class="lede">A timesheet built from the worklogs your team already logs in Jira, by person, epic, project or issue. The app only reads, so it never changes a worklog.</p>
+<img class="shot" src="timesheet.png" alt="The timesheet for this week: one row per person with their issues under them, a column per day, and two short days marked in yellow." width="1840" height="900">
+
+<h2>Open the timesheet</h2>
+<ol>
+  <li>A Jira admin installs the app from the Atlassian Marketplace.</li>
+  <li>For every project you can browse, open <strong>Apps &gt; Timesheet</strong> in Jira's top bar.</li>
+  <li>For one project, open the project and choose <strong>Timesheet</strong> in its sidebar. In some projects it sits under <strong>Apps</strong>.</li>
+</ol>
+<p>The app reads the time logged with Jira's own <strong>Log work</strong>. There is nothing to set up. You only see worklogs you could already see in Jira, because the app reads Jira as you; worklogs limited to a group or role stay hidden from people outside it.</p>
+
+<h2>Choose the period and columns</h2>
+<ul>
+  <li><strong>Period:</strong> this week, last week, this month, last month, the last 30 days, or <strong>Custom</strong> From and To dates. Weeks start on Monday.</li>
+  <li><strong>Columns:</strong> <strong>Days</strong> or <strong>Weeks</strong>. Periods longer than 62 days are always shown by week.</li>
+  <li>Each worklog is counted on the day it started in the time zone of your Jira profile, the same day Jira shows on the issue. Dates are shown in your Jira language.</li>
+</ul>
+
+<h2>Group the rows</h2>
+<ul>
+  <li><strong>Rows</strong> groups by person, epic, project or issue. <strong>Then by</strong> splits each group by another of the four, for example epic then person. Each group has a subtotal; there is a total column and a total row.</li>
+  <li>Sub-tasks count toward their story's epic. Work that is not under an epic is grouped as <em>No epic</em>.</li>
+  <li>Click a group's name to collapse or expand it.</li>
+</ul>
+
+<h2>Choose whose work</h2>
+<ul>
+  <li><strong>JQL</strong> limits the report to the issues your query finds, for example <code>project in (WEB, APP)</code> or <code>component = Billing</code>. On the project page it starts as the current project; on the Apps page it starts empty, which means every project you can browse.</li>
+  <li><strong>Only my worklogs</strong> shows just your own time.</li>
+</ul>
+
+<h2>Missing hours</h2>
+<p>With rows by person and columns by day, each weekday is checked against the hours per day set in Jira's time tracking settings. A day under that target has a yellow mark; a day with nothing logged has a red outline. Weekends, today and future days are not flagged.</p>
+
+<h2>See the worklogs behind a number</h2>
+<p>Click any number in the grid. A panel lists the worklogs that make it up: date and start time, person, issue, time spent and comment. Click an issue key to open the issue.</p>
+
+<h2>Hours format</h2>
+<p>Hours follow Jira's own time format setting: <code>7h 30m</code>, or decimal hours such as <code>7.5h</code>. The <strong>Hours</strong> buttons switch between the two for you.</p>
+
+<h2>Export</h2>
+<ul>
+  <li><strong>Export CSV</strong> saves the grid as shown, with decimal hours so a spreadsheet can add them up.</li>
+  <li><strong>Export worklogs CSV</strong> saves one row per worklog: date, start time, person, issue key, issue summary, issue type, project, epic, hours and comment.</li>
+</ul>
+<p>Both keep the issue key and the summary in separate columns and open in Excel, Numbers and Google Sheets. Exports are made in your browser and saved to your device. They are not sent anywhere.</p>
+
+<h2>Settings are remembered</h2>
+<p>The period, columns, rows, JQL, Only my worklogs and hours format are remembered in your browser, separately for the Apps page and each project. A period such as <em>Last week</em> stays relative, so next Monday it shows the new last week.</p>
+
+<h2>What the app can and cannot do</h2>
+<p>The app has two Jira permissions. <code>read:jira-work</code> finds the issues with worklogs in the period and reads those worklogs. <code>read:jira-user</code> reads Jira's time tracking settings: hours per day, the time format, and whether time tracking is on. It cannot log, edit or delete time, and it has no server of its own and makes no connection outside Jira. Large reports show their progress and stop at 2,000 issues, saying so; narrow the JQL or the period to see the rest. See the <a href="../privacy/">privacy policy</a> for details.</p>
+
+<h2>Troubleshooting</h2>
+<table>
+  <tr><th>You see</th><th>What to do</th></tr>
+  <tr><td>"No worklogs in this period"</td><td>Pick a longer period, or clear the JQL. You only see worklogs you have permission to see in Jira.</td></tr>
+  <tr><td>"Time tracking is turned off on this Jira site"</td><td>A Jira admin can turn it on in Jira settings, under Time tracking.</td></tr>
+  <tr><td>An error message from Jira under the toolbar</td><td>The message is Jira's own JQL error. Fix the field or value it names, then press Show.</td></tr>
+  <tr><td>Someone's time is missing</td><td>Their worklog may be visible only to a group or role you are not in, or on an issue you cannot browse.</td></tr>
+  <tr><td>"The license for this app is not active on this site"</td><td>A Jira admin can renew or start a trial under <strong>Apps &gt; Manage apps</strong>.</td></tr>
+  <tr><td>Timesheet is missing from the Apps menu or the project sidebar</td><td>Ask a Jira admin to check that the app is installed and enabled under <strong>Apps &gt; Manage apps</strong>.</td></tr>
+</table>
+<p>Still stuck? Email <a href="mailto:support@obsidianridgelabs.com">support@obsidianridgelabs.com</a> with your Jira site and a screenshot. We reply within two business days.</p>
+
+<h2>Pricing</h2>
+<p>Free for up to 10 users. Above that, $0.60 per user per month, billed by Atlassian with your Jira subscription.</p>
+<p class="meta">Last updated 2026-11-09.</p>
+</main>
+<footer>
+  <p>Obsidian Ridge Labs, Las Vegas, Nevada, USA. Support: <a href="mailto:support@obsidianridgelabs.com">support@obsidianridgelabs.com</a>.
+  Atlassian, Jira and Confluence are trademarks of Atlassian. Our apps are not made or endorsed by Atlassian.</p>
+</footer>
+</body>
+</html>

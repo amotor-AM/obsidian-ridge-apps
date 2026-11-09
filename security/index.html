@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Security policy: Obsidian Ridge Labs apps for Atlassian</title>
-<meta name="description" content="How to report a security issue in an Obsidian Ridge Labs app for Jira, and how we build and fix our apps.">
+<meta name="description" content="How to report a security issue in an Obsidian Ridge Labs app for Jira or Confluence, and how we build and fix our apps.">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
 <p class="meta">Effective 2026-11-09. Applies to Obsidian Ridge Labs apps on the Atlassian Marketplace.</p>
 
 <h2>Report a security issue</h2>
-<p>Email <a href="mailto:support@obsidianridgelabs.com?subject=Security">support@obsidianridgelabs.com</a> with "Security" in the subject. Tell us the app, the version or date you tested, the steps to reproduce, and the impact you expect. Please do not test against Jira sites you do not own, and give us a reasonable time to fix the issue before you publish it.</p>
+<p>Email <a href="mailto:support@obsidianridgelabs.com?subject=Security">support@obsidianridgelabs.com</a> with "Security" in the subject. Tell us the app, the version or date you tested, the steps to reproduce, and the impact you expect. Please do not test against Atlassian sites you do not own, and give us a reasonable time to fix the issue before you publish it.</p>
 <p>We confirm receipt within two business days, keep you updated while we work on it, and credit you in the release notes if you would like.</p>
 
 <h2>How we fix issues</h2>
@@ -26,10 +26,10 @@
 <h2>How our apps are built</h2>
 <ul>
   <li>Our apps run on Atlassian Forge, Atlassian's hosted app platform. Customer data stays on Atlassian's infrastructure unless an app's listing says otherwise.</li>
-  <li>Each app asks for the narrowest Jira permissions it needs. Read-only Gantt Chart for Jira has one, <code>read:jira-work</code>, and cannot change any data.</li>
-  <li>Read-only Gantt Chart for Jira has no server of its own, stores no customer data outside the viewer's browser, and declares no external network access.</li>
+  <li>Each app asks for the narrowest permissions it needs. Read-only Gantt Chart for Jira has one, <code>read:jira-work</code>, and cannot change any data. Timesheet Report for Jira has two read scopes, <code>read:jira-work</code> and <code>read:jira-user</code>, and cannot log or change time. Markdown Macro for Confluence has none; it only renders the text saved in its own macro.</li>
+  <li>None of our apps has a server of its own, stores customer data outside Atlassian and the viewer's browser, or declares external network access.</li>
   <li>Apps read Jira as the signed-in user, so people only see what Jira already lets them see.</li>
-  <li>Text from Jira is escaped before it is drawn, and CSV exports defuse cells that a spreadsheet could read as formulas.</li>
+  <li>Text from Jira and Confluence is escaped or sanitized before it is drawn, raw HTML in Markdown is shown as text, and CSV exports defuse cells that a spreadsheet could read as formulas.</li>
   <li>We do not ask for or store passwords, API tokens or personal access tokens.</li>
   <li>Before each release we check our dependencies for known vulnerabilities.</li>
 </ul>

@@ -1,0 +1,56 @@
+<!-- path: confluence-markdown/ -->
+<!-- title: Markdown Macro for Confluence: documentation -->
+<!-- desc: How to use Markdown Macro for Confluence: insert the macro, write or import Markdown with a live preview, use tables, alerts, code and Mermaid diagrams, and export to PDF or Word. -->
+<h1>Markdown Macro for Confluence</h1>
+<p class="lede">Write Markdown in a Confluence page and see it rendered, with tables, task lists, alerts, highlighted code and Mermaid diagrams. The Markdown is saved in the page itself.</p>
+<img class="shot" src="shot.png" alt="Markdown source on the left and the same text rendered on the right, with headings, a table and a code block." width="1120" height="548">
+
+<h2>Add Markdown to a page</h2>
+<ol>
+  <li>A Confluence admin installs the app from the Atlassian Marketplace.</li>
+  <li>Edit a page, type <code>/markdown</code> and choose <strong>Markdown</strong>. The editor opens.</li>
+  <li>Write or paste Markdown on the left. The preview on the right updates as you type.</li>
+  <li>Choose <strong>Save</strong>, or press Ctrl+S (Cmd+S on a Mac). Then publish the page as usual.</li>
+</ol>
+<p>To change it later, edit the page, select the macro and choose <strong>Edit</strong>. <strong>Cancel</strong> closes the editor without changing anything.</p>
+
+<h2>Import a .md file</h2>
+<p>In the editor, choose <strong>Import .md file</strong> and pick a <code>.md</code>, <code>.markdown</code> or <code>.txt</code> file from your computer. Its text replaces what is in the editor, so you can check the preview before you save. Windows line endings are converted. The file is read in your browser and is not uploaded anywhere.</p>
+
+<h2>What you can write</h2>
+<ul>
+  <li><strong>The basics:</strong> headings, bold, italic, <code>~~strikethrough~~</code>, links, quotes, bullet and numbered lists, horizontal rules, and bare URLs that become links.</li>
+  <li><strong>Tables</strong> with left, centre and right alignment.</li>
+  <li><strong>Task lists:</strong> <code>- [ ] to do</code> and <code>- [x] done</code> show as checkboxes. They are read-only; change the text to tick one.</li>
+  <li><strong>Alerts:</strong> a quote that starts with <code>[!NOTE]</code>, <code>[!TIP]</code>, <code>[!IMPORTANT]</code>, <code>[!WARNING]</code> or <code>[!CAUTION]</code> becomes a coloured box, as on GitHub.</li>
+  <li><strong>Footnotes:</strong> <code>[^1]</code> in the text and <code>[^1]: the note</code> below it.</li>
+  <li><strong>Contents list:</strong> a line with only <code>[TOC]</code> (or <code>[[_TOC_]]</code>) lists the headings, up to level 3. Heading links work the way they do on GitHub, so <code>[Install](#install)</code> jumps to the Install heading.</li>
+  <li><strong>Code:</strong> fenced code blocks are highlighted in 23 languages, including Bash, C#, Go, Java, JavaScript, JSON, Kotlin, PHP, Python, Ruby, Rust, SQL, Swift, TypeScript and YAML. Each block has a <strong>Copy</strong> button.</li>
+  <li><strong>Mermaid diagrams:</strong> a code block marked <code>mermaid</code> is drawn as a diagram at its full height. If a diagram has a mistake, the error and the diagram's source are shown in its place, and the rest of the page still renders.</li>
+</ul>
+<p>Light and dark themes follow your Confluence setting.</p>
+
+<h2>Images and HTML</h2>
+<p>Images written as <code>![alt](https://...)</code> are shown as a link with the alt text, which opens the image in a new tab. This keeps the app from connecting to other websites. To show a picture in the page, attach it with Confluence's own image tool next to the macro.</p>
+<p>Raw HTML in the Markdown is shown as plain text and never run. This protects readers from scripts pasted into a page.</p>
+
+<h2>Exports, copies and history</h2>
+<p>The Markdown is stored in the page as the macro's body, not in a separate database. It moves, copies and is versioned with the page. When you export the page to PDF or Word, the macro is exported as real headings, lists, tables, panels and code blocks. Mermaid diagrams are exported as their source code.</p>
+
+<h2>What the app can and cannot do</h2>
+<p>The app asks for no Confluence permissions. It only reads the Markdown that Confluence hands to the macro, and renders it in your browser. It has no server of its own, makes no connection outside Atlassian, and does not show pop-ups or announcements. See the <a href="../privacy/">privacy policy</a> for details.</p>
+
+<h2>Troubleshooting</h2>
+<table>
+  <tr><th>You see</th><th>What to do</th></tr>
+  <tr><td>"This Markdown macro is empty"</td><td>Edit the page, select the macro, choose Edit and write some Markdown.</td></tr>
+  <tr><td>"Diagram not drawn" with an error</td><td>The Mermaid code has a mistake. The message says what Mermaid could not read; the <a href="https://mermaid.js.org/intro/syntax-reference.html">Mermaid syntax reference</a> shows the right form.</td></tr>
+  <tr><td>HTML tags shown as text</td><td>That is on purpose. Write the same thing in Markdown, or use a Confluence macro next to it.</td></tr>
+  <tr><td>"The Markdown macro license is not active"</td><td>A Confluence admin can renew or start a trial under <strong>Apps &gt; Manage apps</strong>.</td></tr>
+  <tr><td>Markdown is missing from the / menu</td><td>Ask a Confluence admin to check that the app is installed and enabled under <strong>Apps &gt; Manage apps</strong>.</td></tr>
+</table>
+<p>Still stuck? Email <a href="mailto:support@obsidianridgelabs.com">support@obsidianridgelabs.com</a> with your Confluence site and a screenshot. We reply within two business days.</p>
+
+<h2>Pricing</h2>
+<p>Free for up to 10 users. Above that, $0.50 per user per month, billed by Atlassian with your Confluence subscription.</p>
+<p class="meta">Last updated 2026-11-09.</p>
