@@ -14,7 +14,7 @@
 <h2>How our apps are built</h2>
 <ul>
   <li>Our apps run on Atlassian Forge, Atlassian's hosted app platform. Customer data stays on Atlassian's infrastructure unless an app's listing says otherwise.</li>
-  <li>Each app asks for the narrowest permissions it needs. Read-only Gantt Chart for Jira has one, <code>read:jira-work</code>, and cannot change any data. Timesheet Report for Jira has two read scopes, <code>read:jira-work</code> and <code>read:jira-user</code>, and cannot log or change time. Markdown Macro for Confluence has none; it only renders the text saved in its own macro.</li>
+  <li>Each app asks for the narrowest permissions it needs. Read-only Gantt Chart for Jira has one, <code>read:jira-work</code>, and cannot change any data. Timesheet Report for Jira has two read scopes, <code>read:jira-work</code> and <code>read:jira-user</code>, and cannot log or change time. Markdown Renderer for Confluence has none; it only renders the text saved in its own macro.</li>
   <li>None of our apps has a server of its own, stores customer data outside Atlassian and the viewer's browser, or declares external network access.</li>
   <li>Apps read Jira as the signed-in user, so people only see what Jira already lets them see.</li>
   <li>Text from Jira and Confluence is escaped or sanitized before it is drawn, raw HTML in Markdown is shown as text, and CSV exports defuse cells that a spreadsheet could read as formulas.</li>
